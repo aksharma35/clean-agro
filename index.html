@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clean Agro — Residue-free farming from living soil</title>
+<meta name="description" content="Clean Agro partners with 2,000+ farmers across India to grow residue-free food using bio-inputs, living soil, and honest farm-gate pricing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" />
+<style>
+:root{
+  --ink:#14301D;
+  --field:#245234;
+  --grain:#E0AF3C;
+  --paper:#F6F2E6;
+  --paper-deep:#EDE6D2;
+  --soil:#3E2F23;
+  --mist:#C8D8C6;
+  --line:rgba(20,48,29,.18);
+  --display:'Young Serif',Georgia,serif;
+  --body:'Karla',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--grain);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12}
+section{padding:96px 0}
+.section-head{max-width:640px;margin-bottom:56px}
+.section-head .eyebrow{color:var(--field);display:block;margin-bottom:14px}
+.section-head h2{font-size:clamp(30px,4vw,44px)}
+.section-head p{margin-top:16px;color:#4a5a4e}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:21px}
+.brand-mark{width:30px;height:30px;border-radius:50% 50% 50% 0;background:var(--field);position:relative;transform:rotate(-45deg)}
+.brand-mark::after{content:"";position:absolute;inset:7px;border-radius:50% 50% 50% 0;background:var(--grain)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:600;color:var(--ink);opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--field)}
+.nav-cta{background:var(--ink);color:var(--paper)!important;padding:10px 18px;border-radius:999px;opacity:1!important}
+.nav-cta:hover{background:var(--field)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:var(--mono);font-size:12px;cursor:pointer;color:var(--ink)}
+
+/* ---------- Hero: the seed packet ---------- */
+.hero{background:var(--ink);color:var(--paper);padding:56px 0 0}
+.packet{border:2px dashed var(--grain);border-radius:6px;position:relative;padding:64px 48px 56px;margin-bottom:0}
+.packet::before,.packet::after,
+.packet .tick-a,.packet .tick-b{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--grain)}
+.packet::before{top:-2px;left:-2px;border-right:0;border-bottom:0}
+.packet::after{top:-2px;right:-2px;border-left:0;border-bottom:0}
+.packet .tick-a{bottom:-2px;left:-2px;border-right:0;border-top:0}
+.packet .tick-b{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.packet-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grain);margin-bottom:40px}
+.hero h1{font-size:clamp(40px,6.4vw,76px);max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--grain)}
+.hero-sub{margin-top:22px;max-width:52ch;color:var(--mist);font-size:19px}
+.hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:14px 26px;border-radius:999px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--grain);color:var(--ink)}
+.btn-gold:hover{background:#eec25a}
+.btn-ghost{border:1.5px solid var(--mist);color:var(--paper)}
+.btn-ghost:hover{border-color:var(--grain);color:var(--grain)}
+.packet-specs{display:flex;gap:0;margin-top:56px;border-top:1px solid rgba(224,175,60,.35);flex-wrap:wrap}
+.spec{padding:18px 28px 6px 0;margin-right:28px;font-family:var(--mono);font-size:13px;color:var(--mist)}
+.spec b{display:block;color:var(--paper);font-size:15px;font-weight:500}
+.perforation{height:34px;background:
+  radial-gradient(circle at 8px 50%, var(--paper) 5px, transparent 6px) repeat-x;
+  background-size:24px 34px;margin-top:56px}
+.hero-load .reveal-up{opacity:0;transform:translateY(18px);animation:rise .7s ease forwards}
+.hero-load .d1{animation-delay:.05s}.hero-load .d2{animation-delay:.2s}
+.hero-load .d3{animation-delay:.35s}.hero-load .d4{animation-delay:.5s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ---------- Ticker ---------- */
+.ticker{background:var(--grain);color:var(--ink);overflow:hidden;padding:12px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.ticker-track{display:flex;gap:0;white-space:nowrap;font-family:var(--mono);font-size:14px;letter-spacing:.12em;text-transform:uppercase;animation:slide 32s linear infinite;width:max-content}
+.ticker-track span{padding:0 18px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- Story ---------- */
+.story{background:var(--paper)}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.story-copy p{margin-bottom:18px;color:#3c4a40}
+.story-copy p:first-of-type::first-letter{font-family:var(--display);font-size:52px;float:left;line-height:.85;padding:6px 10px 0 0;color:var(--field)}
+.pull{border-left:3px solid var(--grain);padding:6px 0 6px 20px;font-family:var(--display);font-size:21px;color:var(--ink);margin:26px 0}
+.timeline{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden}
+.timeline-head{background:var(--field);color:var(--paper);padding:14px 22px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.t-row{display:grid;grid-template-columns:86px 1fr;gap:18px;padding:20px 22px;border-top:1px solid var(--line)}
+.t-row:first-of-type{border-top:0}
+.t-year{font-family:var(--mono);font-size:14px;color:var(--field);font-weight:500;padding-top:2px}
+.t-row h3{font-size:17px;font-family:var(--body);font-weight:700;margin-bottom:4px}
+.t-row p{font-size:15px;color:#55645a}
+
+/* ---------- What we do ---------- */
+.work{background:var(--paper-deep)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,48,29,.10)}
+.card-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);background:var(--field);align-self:flex-start;padding:5px 10px;border-radius:4px}
+.card h3{font-size:23px}
+.card p{font-size:15.5px;color:#4a5a4e;flex:1}
+.card ul{list-style:none;font-size:14.5px;color:#3c4a40}
+.card li{padding:7px 0 7px 22px;border-top:1px dashed var(--line);position:relative}
+.card li::before{content:"•";color:var(--grain);position:absolute;left:6px;font-weight:700}
+
+/* ---------- Impact ---------- */
+.impact{background:var(--ink);color:var(--paper)}
+.impact .section-head .eyebrow{color:var(--grain)}
+.impact .section-head p{color:var(--mist)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(224,175,60,.35)}
+.stat{padding:34px 28px;border-left:1px solid rgba(224,175,60,.35)}
+.stat:first-child{border-left:0}
+.stat-num{font-family:var(--mono);font-size:clamp(30px,3.6vw,44px);color:var(--grain);font-weight:500}
+.stat-label{margin-top:10px;font-size:14.5px;color:var(--mist)}
+.impact-note{margin-top:22px;font-family:var(--mono);font-size:12.5px;color:rgba(200,216,198,.7)}
+
+/* ---------- Calendar ---------- */
+.calendar-strip{border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}
+.cal-head{display:grid;grid-template-columns:150px repeat(12,1fr);background:var(--field);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.cal-head div{padding:12px 6px;text-align:center;border-left:1px solid rgba(246,242,230,.18)}
+.cal-head div:first-child{text-align:left;padding-left:18px;border-left:0}
+.cal-row{display:grid;grid-template-columns:150px repeat(12,1fr);border-top:1px solid var(--line);align-items:center}
+.cal-row>div{height:52px;border-left:1px solid var(--line);position:relative}
+.cal-row>div:first-child{border-left:0;display:flex;align-items:center;padding-left:18px;font-weight:700;font-size:14.5px;height:auto}
+.crop-sub{display:block;font-family:var(--mono);font-size:11px;color:#6b7a70;font-weight:400}
+.bar{position:absolute;top:50%;transform:translateY(-50%);height:16px;border-radius:999px;left:8%;right:8%}
+.bar.sow{background:var(--grain)}
+.bar.grow{background:var(--mist)}
+.bar.harvest{background:var(--field)}
+.cal-legend{display:flex;gap:26px;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:#55645a;flex-wrap:wrap}
+.cal-legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:14px;height:14px;border-radius:50%}
+.dot.g{background:var(--grain)}.dot.m{background:var(--mist)}.dot.f{background:var(--field)}
+
+/* ---------- Voices ---------- */
+.voices{background:var(--paper)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:10px;padding:36px 32px;position:relative}
+.quote::before{content:"“";font-family:var(--display);font-size:74px;color:var(--grain);position:absolute;top:6px;left:24px;line-height:1}
+.quote p{font-family:var(--display);font-size:20px;line-height:1.45;padding-top:34px}
+.quote footer{margin-top:20px;font-family:var(--mono);font-size:13px;color:#55645a}
+.quote footer b{color:var(--field);font-weight:500}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--paper-deep)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contact-info p{color:#3c4a40;margin-bottom:22px}
+.contact-lines{font-family:var(--mono);font-size:14px;line-height:2.1;color:var(--ink)}
+.contact-lines a{color:var(--field);text-decoration:none;border-bottom:1px dashed var(--field)}
+.form{background:#fff;border:1px solid var(--line);border-radius:10px;padding:34px}
+.form label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:18px 0 8px;color:var(--field)}
+.form label:first-of-type{margin-top:0}
+.form input,.form textarea{width:100%;border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:13px 14px;font-family:var(--body);font-size:15.5px;color:var(--ink)}
+.form input:focus,.form textarea:focus{outline:2px solid var(--grain);border-color:var(--grain)}
+.form textarea{min-height:120px;resize:vertical}
+.form button{margin-top:24px;width:100%;border:0;cursor:pointer;font-family:var(--body)}
+.form-note{margin-top:14px;font-size:13px;color:#6b7a70;text-align:center}
+.form-thanks{display:none;text-align:center;padding:44px 10px}
+.form-thanks h3{font-size:26px;margin-bottom:12px}
+.form-thanks p{color:#4a5a4e}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--soil);color:#E8DFCF;padding:56px 0 34px}
+.footer-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.footer .brand{color:#E8DFCF;font-size:19px}
+.footer-tag{margin-top:12px;font-size:14px;color:#B9AB94;max-width:34ch}
+.footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.footer nav a{text-decoration:none;font-size:14px;color:#E8DFCF;opacity:.85}
+.footer nav a:hover{opacity:1;color:var(--grain)}
+.footer-base{margin-top:44px;padding-top:22px;border-top:1px solid rgba(232,223,207,.2);font-family:var(--mono);font-size:12px;color:#B9AB94;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- Scroll reveal ---------- */
+.fade{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  section{padding:72px 0}
+  .story-grid,.contact-grid,.quotes{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr;gap:18px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{border-top:1px solid rgba(224,175,60,.35)}
+  .stat:nth-child(-n+2){border-top:0}
+  .stat:nth-child(odd){border-left:0}
+  .packet{padding:44px 24px}
+  .cal-head,.cal-row{grid-template-columns:110px repeat(12,1fr)}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+@media (max-width:560px){
+  .cal-head div:not(:first-child){font-size:9px;padding:10px 2px}
+  .packet-top{gap:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-load .reveal-up{animation:none;opacity:1;transform:none}
+  .ticker-track{animation:none}
+  .fade{opacity:1;transform:none;transition:none}
+  .btn:hover,.card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Clean Agro home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Clean&nbsp;Agro
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#work">What we do</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#calendar">Harvest calendar</a></li>
+      <li><a href="#contact" class="nav-cta">Partner with us</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-load">
+    <div class="packet">
+      <span class="tick-a" aria-hidden="true"></span>
+      <span class="tick-b" aria-hidden="true"></span>
+      <div class="packet-top reveal-up d1">
+        <span>Clean Agro · Est. 2013</span>
+        <span>Nashik, Maharashtra</span>
+        <span>Batch № CA-2026-K1</span>
+      </div>
+      <h1 class="reveal-up d2">Good food starts in <em>living soil.</em></h1>
+      <p class="hero-sub reveal-up d3">We partner with smallholder farmers across western India to grow residue-free fruit, vegetables, and grain — replacing synthetic inputs with bio-fertilizers, on-farm science, and a fair farm-gate price.</p>
+      <div class="hero-actions reveal-up d3">
+        <a class="btn btn-gold" href="#contact">Partner with us</a>
+        <a class="btn btn-ghost" href="#story">Read our story</a>
+      </div>
+      <div class="packet-specs reveal-up d4">
+        <div class="spec">Farmer partners<b>2,140+</b></div>
+        <div class="spec">Acres under conversion<b>11,800</b></div>
+        <div class="spec">Synthetic pesticide<b>0 ml</b></div>
+        <div class="spec">States<b>Maharashtra · MP · Gujarat</b></div>
+      </div>
+    </div>
+    <div class="perforation" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Grapes</span><span>◆</span><span>Pomegranate</span><span>◆</span><span>Onion</span><span>◆</span><span>Tomato</span><span>◆</span><span>Soybean</span><span>◆</span><span>Wheat</span><span>◆</span><span>Chickpea</span><span>◆</span><span>Turmeric</span><span>◆</span><span>Okra</span><span>◆</span><span>Banana</span><span>◆</span>
+    <span>Grapes</span><span>◆</span><span>Pomegranate</span><span>◆</span><span>Onion</span><span>◆</span><span>Tomato</span><span>◆</span><span>Soybean</span><span>◆</span><span>Wheat</span><span>◆</span><span>Chickpea</span><span>◆</span><span>Turmeric</span><span>◆</span><span>Okra</span><span>◆</span><span>Banana</span><span>◆</span>
+  </div>
+</div>
+
+<!-- ================= STORY ================= -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">Our story</span>
+      <h2>It began with four acres and a soil report nobody wanted to read.</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-copy fade">
+        <p>In 2012, Rohan Patil left a logistics job in Pune and went home to Niphad, in Nashik district, to help his father through a bad grape season. The vines were tired. Twenty years of heavy chemical spraying had pushed yields up and then quietly pulled them back down — while input bills kept climbing. A soil test told the real story: organic carbon at 0.3%, a third of what a living vineyard needs.</p>
+        <p>Instead of buying more chemistry, the Patils tried subtraction. On four acres they replaced synthetic fertilizer with vermicompost made from their own farm waste, swapped pesticide sprays for neem oil and pheromone traps, and kept meticulous notes. The first year was humbling. The second year, input costs fell by a third. By the third, the soil carbon had doubled — and a Mumbai exporter paid a premium for grapes that cleared European residue tests on the first attempt.</p>
+        <p class="pull">Neighbours didn't ask for a lecture on organic farming. They asked for the recipe.</p>
+        <p>Clean Agro was registered in 2013 to share that recipe: produce the bio-inputs at scale, train farmers in the transition, and — most importantly — buy the harvest at a committed price so no farmer carries the risk of change alone. Today we work with over 2,100 farmer partners across Maharashtra, Madhya Pradesh, and Gujarat. The soil report that started it all hangs framed in our Nashik office, next to the most recent one from the same plot: organic carbon, 0.9% and climbing.</p>
+      </div>
+      <aside class="timeline fade" aria-label="Company timeline">
+        <div class="timeline-head">Field log · 2013 → today</div>
+        <div class="t-row"><div class="t-year">2013</div><div><h3>Registered in Nashik</h3><p>First vermicompost unit built beside the family vineyard. 14 neighbouring farms sign up.</p></div></div>
+        <div class="t-row"><div class="t-year">2016</div><div><h3>First export lot</h3><p>Residue-free grapes shipped to the Netherlands. Committed farm-gate pricing introduced.</p></div></div>
+        <div class="t-row"><div class="t-year">2019</div><div><h3>Beyond the vineyard</h3><p>Bio-input line expands to 9 products. Training centre opens; 500th farmer joins.</p></div></div>
+        <div class="t-row"><div class="t-year">2023</div><div><h3>Three states</h3><p>Operations extend to Madhya Pradesh and Gujarat with soybean, wheat, and turmeric.</p></div></div>
+        <div class="t-row"><div class="t-year">2026</div><div><h3>11,800 acres</h3><p>2,140 farmer partners. Zero synthetic pesticide across the network — third year running.</p></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- ================= WHAT WE DO ================= -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">What we do</span>
+      <h2>Three things, done properly.</h2>
+      <p>Everything we run exists to make one change stick: farms that feed the soil instead of fighting it, and farmers who earn more for doing so.</p>
+    </div>
+    <div class="cards">
+      <article class="card fade">
+        <span class="card-tag">Grow</span>
+        <h3>Bio-inputs</h3>
+        <p>Made in our Nashik and Indore units from farm waste, neem, and native microbial cultures — batch-tested before anything leaves the gate.</p>
+        <ul>
+          <li>Vermicompost &amp; enriched FYM</li>
+          <li>Neem-based pest management</li>
+          <li>Jeevamrut &amp; microbial consortia</li>
+          <li>Soil testing with plain-language reports</li>
+        </ul>
+      </article>
+      <article class="card fade">
+        <span class="card-tag">Harvest</span>
+        <h3>Residue-free produce</h3>
+        <p>We buy what our partner farms grow at a price committed before sowing, then handle grading, cold chain, and residue certification.</p>
+        <ul>
+          <li>Table grapes, pomegranate, banana</li>
+          <li>Onion, tomato, okra, turmeric</li>
+          <li>Soybean, wheat, chickpea</li>
+          <li>Every lot lab-tested &amp; traceable to its farm</li>
+        </ul>
+      </article>
+      <article class="card fade">
+        <span class="card-tag">Learn</span>
+        <h3>Farmer transition</h3>
+        <p>A three-season programme that walks each farm from chemical dependence to living soil — without a single season of lost income.</p>
+        <ul>
+          <li>Field schools in Marathi &amp; Hindi</li>
+          <li>Season-long agronomist support on call</li>
+          <li>Transition credit for bio-inputs</li>
+          <li>Committed buy-back from year one</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACT ================= -->
+<section class="impact" id="impact">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">Impact · verified annually</span>
+      <h2>What the ledger says.</h2>
+      <p>We publish these numbers every March, audited alongside our accounts. Farming claims are cheap; ledgers aren't.</p>
+    </div>
+    <div class="stats fade">
+      <div class="stat"><div class="stat-num" data-count="2140">0</div><div class="stat-label">Farmer partners across three states</div></div>
+      <div class="stat"><div class="stat-num" data-count="11800">0</div><div class="stat-label">Acres under residue-free cultivation</div></div>
+      <div class="stat"><div class="stat-num" data-count="34" data-suffix="%">0</div><div class="stat-label">Average drop in input costs by season three</div></div>
+      <div class="stat"><div class="stat-num" data-count="19" data-suffix="%">0</div><div class="stat-label">Average premium over mandi price, paid at farm gate</div></div>
+    </div>
+    <p class="impact-note">// Figures from the FY 2025–26 impact audit. Full report available on request.</p>
+  </div>
+</section>
+
+<!-- ================= HARVEST CALENDAR ================= -->
+<section class="calendar" id="calendar">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">Harvest calendar</span>
+      <h2>What's in season, when.</h2>
+      <p>Our network follows the Kharif and Rabi cycles. Buyers plan against this calendar; farmers sow against a price already committed.</p>
+    </div>
+    <div class="calendar-strip fade" role="img" aria-label="Seasonal calendar showing sowing, growing, and harvest months for grapes, soybean, wheat, onion, and turmeric">
+      <div class="cal-head">
+        <div>Crop</div><div>Jan</div><div>Feb</div><div>Mar</div><div>Apr</div><div>May</div><div>Jun</div><div>Jul</div><div>Aug</div><div>Sep</div><div>Oct</div><div>Nov</div><div>Dec</div>
+      </div>
+      <div class="cal-row">
+        <div>Grapes<span class="crop-sub">Nashik</span></div>
+        <div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div></div><div></div><div></div><div></div><div></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div>
+      </div>
+      <div class="cal-row">
+        <div>Soybean<span class="crop-sub">Kharif · MP</span></div>
+        <div></div><div></div><div></div><div></div><div></div><div><span class="bar sow"></span></div><div><span class="bar sow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div></div>
+      </div>
+      <div class="cal-row">
+        <div>Wheat<span class="crop-sub">Rabi · MP</span></div>
+        <div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div></div><div></div><div></div><div></div><div></div><div></div><div><span class="bar sow"></span></div><div><span class="bar sow"></span></div>
+      </div>
+      <div class="cal-row">
+        <div>Onion<span class="crop-sub">Late Kharif</span></div>
+        <div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div></div><div></div><div></div><div></div><div></div><div><span class="bar sow"></span></div><div><span class="bar sow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div>
+      </div>
+      <div class="cal-row">
+        <div>Turmeric<span class="crop-sub">Sangli belt</span></div>
+        <div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div><span class="bar harvest"></span></div><div></div><div><span class="bar sow"></span></div><div><span class="bar sow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div><div><span class="bar grow"></span></div>
+      </div>
+    </div>
+    <div class="cal-legend fade">
+      <span><span class="dot g"></span> Sowing</span>
+      <span><span class="dot m"></span> Growing</span>
+      <span><span class="dot f"></span> Harvest &amp; supply</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOICES ================= -->
+<section class="voices">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">From the field</span>
+      <h2>Farmers say it better.</h2>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote fade">
+        <p>My spray bill used to decide my season. Now the soil does. Third year with Clean Agro, and for the first time my son is talking about staying on the farm.</p>
+        <footer><b>Sunil Gaikwad</b> · 6 acres, grapes · Niphad, Nashik</footer>
+      </blockquote>
+      <blockquote class="quote fade">
+        <p>They committed the soybean price before I sowed a single seed. When the mandi crashed in October, my price didn't. That's the whole difference.</p>
+        <footer><b>Meera Verma</b> · 9 acres, soybean &amp; wheat · Dewas, MP</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head fade">
+      <span class="eyebrow">Partner with us</span>
+      <h2>Buyers, farmers, and the simply curious.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade">
+        <p><strong>Buying?</strong> We supply retailers, exporters, and food brands with lab-certified residue-free produce, traceable to the farm. Tell us your volumes and calendar.</p>
+        <p><strong>Farming?</strong> If your land is in Maharashtra, Madhya Pradesh, or Gujarat and you're ready to change how it's fed, our field team will visit — the first soil test is on us.</p>
+        <div class="contact-lines">
+          <div>→ <a href="mailto:namaste@cleanagro.in">namaste@cleanagro.in</a></div>
+          <div>→ +91 253 000 0000 (Mon–Sat, 9:00–18:00 IST)</div>
+          <div>→ Plot 12, MIDC Ambad, Nashik 422010, Maharashtra</div>
+        </div>
+      </div>
+      <div class="form fade" id="contactForm">
+        <div id="formFields">
+          <label for="fName">Your name</label>
+          <input id="fName" type="text" autocomplete="name" placeholder="Sunil Gaikwad" />
+          <label for="fEmail">Email or phone</label>
+          <input id="fEmail" type="text" autocomplete="email" placeholder="you@example.com" />
+          <label for="fMsg">How can we help?</label>
+          <textarea id="fMsg" placeholder="I'm a buyer looking for residue-free onion, ~40 MT monthly…"></textarea>
+          <button class="btn btn-gold" id="formSend" type="button">Send message</button>
+          <p class="form-note">No mailing lists. A person replies within two working days.</p>
+        </div>
+        <div class="form-thanks" id="formThanks">
+          <h3>Message sown. 🌱</h3>
+          <p>Thank you — we've received your note and will reply within two working days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Clean&nbsp;Agro</a>
+        <p class="footer-tag">Residue-free farming from living soil. Nashik · Indore · Vadodara.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#story">Our story</a>
+        <a href="#work">What we do</a>
+        <a href="#impact">Impact</a>
+        <a href="#calendar">Harvest calendar</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Clean Agro Farms Pvt. Ltd.</span>
+      <span>Batch № CA-2026-K1 · Grown, not manufactured.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+const toggle=document.getElementById('navToggle');
+const links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  const open=links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',open);
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');toggle.setAttribute('aria-expanded','false');
+}));
+
+// Scroll reveal
+const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('stats'))runCounters(e.target);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// Stat counters
+function runCounters(scope){
+  scope.querySelectorAll('.stat-num').forEach(el=>{
+    const target=parseInt(el.dataset.count,10);
+    const suffix=el.dataset.suffix||'';
+    if(prefersReduced){el.textContent=target.toLocaleString('en-IN')+suffix;return;}
+    const dur=1400,start=performance.now();
+    function tick(now){
+      const p=Math.min((now-start)/dur,1);
+      const eased=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*eased).toLocaleString('en-IN')+suffix;
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+// Contact form (static site: shows confirmation; wire to Formspree for real delivery)
+document.getElementById('formSend').addEventListener('click',()=>{
+  const name=document.getElementById('fName').value.trim();
+  const contact=document.getElementById('fEmail').value.trim();
+  const msg=document.getElementById('fMsg').value.trim();
+  if(!name||!contact||!msg){
+    alert('Please fill in all three fields so we can get back to you.');
+    return;
+  }
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formThanks').style.display='block';
+});
+</script>
+</body>
+</html>
