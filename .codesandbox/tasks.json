@@ -1,0 +1,24 @@
+{
+  "$schema": "https://codesandbox.io/schemas/tasks.json",
+  "setupTasks": [
+    {
+      "name": "Install portal dependencies",
+      "command": "cd portal && npm install"
+    }
+  ],
+  "tasks": {
+    "dev": {
+      "name": "Run portal",
+      "command": "cd portal && npm run dev",
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
+    },
+    "test": {
+      "name": "Run portal tests",
+      "command": "cd portal && npm test",
+      "runAtStart": false
+    }
+  }
+}

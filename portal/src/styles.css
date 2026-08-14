@@ -1,0 +1,186 @@
+/* Design tokens lifted from the marketing site so the portal reads as the same company. */
+:root {
+  --ink: #14301D;
+  --field: #245234;
+  --grain: #E0AF3C;
+  --paper: #F6F2E6;
+  --paper-deep: #EDE6D2;
+  --soil: #3E2F23;
+  --mist: #C8D8C6;
+  --line: rgba(20, 48, 29, .18);
+  --alert: #A33327;
+  --display: 'Young Serif', Georgia, serif;
+  --body: 'Karla', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+  min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.15; }
+
+:focus-visible { outline: 3px solid var(--grain); outline-offset: 3px; border-radius: 2px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--field);
+}
+
+/* ---------- Shell ---------- */
+.shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+.shell-nav {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.shell-nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-size: 21px; color: var(--ink); }
+.brand-mark {
+  width: 30px; height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--field);
+  position: relative;
+  transform: rotate(-45deg);
+  flex: none;
+}
+.brand-mark::after { content: ""; position: absolute; inset: 7px; border-radius: 50% 50% 50% 0; background: var(--grain); }
+.shell-nav .back { font-size: 14px; font-weight: 600; color: var(--field); text-decoration: none; }
+.shell-nav .back:hover { text-decoration: underline; }
+
+.shell-main { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 64px 24px; }
+
+.shell-foot {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #5c6b5f;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 36px 32px;
+  box-shadow: 0 1px 0 var(--paper-deep), 0 18px 40px -28px rgba(20, 48, 29, .5);
+}
+.card-head { margin-bottom: 26px; }
+.card-head h1 { font-size: 28px; margin: 12px 0 8px; }
+.card-head p { color: #4a5a4e; font-size: 15px; }
+
+/* ---------- Form primitives (available to any component) ---------- */
+label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+input:focus { border-color: var(--field); }
+input[aria-invalid="true"] { border-color: var(--alert); background: #fdf4f2; }
+
+.field { margin-bottom: 18px; }
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--alert);
+}
+
+.btn {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 700;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 20px;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn:hover:not(:disabled) { background: var(--field); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn-gold { background: var(--grain); color: var(--ink); }
+.btn-gold:hover:not(:disabled) { background: #cf9f2f; }
+
+.form-note { margin-top: 14px; font-size: 13px; color: #5c6b5f; text-align: center; }
+
+.banner {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.banner-error { background: #fdf4f2; border: 1px solid rgba(163, 51, 39, .35); color: var(--alert); }
+
+/* ---------- Placeholder (removed once the login form ships) ---------- */
+.stub {
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 26px;
+  text-align: center;
+}
+.stub .ticket { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--field); }
+.stub p { margin-top: 10px; font-size: 15px; color: #4a5a4e; }
+
+/* ---------- Dashboard ---------- */
+.dash { width: 100%; max-width: 760px; }
+.dash-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.dash-head h1 { font-size: 32px; margin-top: 10px; }
+.linkish { background: none; border: 0; font-family: var(--body); font-size: 14px; font-weight: 700; color: var(--field); cursor: pointer; text-decoration: underline; padding: 0; }
+
+.plots { display: grid; gap: 16px; }
+.plot {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--field);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+.plot-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.plot h2 { font-size: 20px; }
+.plot .date { font-family: var(--mono); font-size: 12px; color: #5c6b5f; }
+.readings { display: flex; flex-wrap: wrap; gap: 22px; }
+.reading .k { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #5c6b5f; }
+.reading .v { font-family: var(--display); font-size: 22px; }
+
+@media (max-width: 560px) {
+  .shell-main { padding: 36px 18px; }
+  .card { padding: 28px 22px; }
+  .dash-head { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
