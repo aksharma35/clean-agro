@@ -3,10 +3,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // One Vite project, two pages: the marketing site at / and the farmer
-// portal at /portal/. Everything is served from the domain root
-// (cleanagro.xyz via CNAME), so no base-path juggling is needed in dev,
-// StackBlitz/CodeSandbox, or production.
-export default defineConfig({
+// portal at /portal/. The site is hosted as a GitHub Pages project page
+// at https://aksharma35.github.io/clean-agro/, so production builds need
+// the /clean-agro/ base. Dev, StackBlitz, and CodeSandbox serve from /.
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/clean-agro/' : '/',
   plugins: [react()],
   build: {
     rollupOptions: {
@@ -22,4 +23,4 @@ export default defineConfig({
     setupFiles: './src/portal/test/setup.js',
     css: false,
   },
-});
+}));
