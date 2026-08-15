@@ -29,6 +29,7 @@ export default function LoginForm({ onSignedIn }) {
   const [fieldErrors, setFieldErrors] = useState({});
   const [formError, setFormError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -92,11 +93,23 @@ export default function LoginForm({ onSignedIn }) {
         </div>
 
         <div className="field">
-          <label htmlFor="login-password">Password</label>
+          <div className="field-head">
+            <label htmlFor="login-password">Password</label>
+            {/* type="button" is load-bearing: a bare button inside a form submits it. */}
+            <button
+              type="button"
+              className="linkish"
+              onClick={() => setPasswordVisible((visible) => !visible)}
+              aria-controls="login-password"
+              aria-label={passwordVisible ? 'Hide password' : 'Show password'}
+            >
+              {passwordVisible ? 'Hide' : 'Show'}
+            </button>
+          </div>
           <input
             id="login-password"
             name="password"
-            type="password"
+            type={passwordVisible ? 'text' : 'password'}
             autoComplete="current-password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -115,9 +128,20 @@ export default function LoginForm({ onSignedIn }) {
         </button>
       </form>
 
-      <p className="form-note">
-        Trouble signing in? Call your field officer on +91 253 000 0000.
-      </p>
+      <div className="form-foot">
+        {/*
+         * Placeholder — deliberately inert, and covered by tests that assert it
+         * stays that way. The password reset flow is not specified or built:
+         * auth.js has no reset call and the portal has no route to send anyone
+         * to. Wire the real flow in here once that ticket lands.
+         */}
+        <button type="button" className="linkish" aria-disabled="true">
+          Forgot password?
+        </button>
+        <p className="form-note">
+          Trouble signing in? Call your field officer on +91 253 000 0000.
+        </p>
+      </div>
     </div>
   );
 }
