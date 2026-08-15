@@ -7,10 +7,12 @@ One Vite project, two pages:
 | `/` | The public marketing site | `index.html` + `src/site/` (plain HTML/CSS/JS) |
 | `/portal/` | The farmer portal — sign in to see soil test results | `portal/index.html` + `src/portal/` (React 18) |
 
-Both deploy together to GitHub Pages on every push to `main`:
+Both deploy together to GitHub Pages on every push to `main`, served from the
+custom domain `cleanagro.xyz` (the `public/CNAME` file plus the domain
+configured in Settings → Pages):
 
-- Site → `https://aksharma35.github.io/clean-agro/`
-- Portal → `https://aksharma35.github.io/clean-agro/portal/`
+- Site → `https://cleanagro.xyz/`
+- Portal → `https://cleanagro.xyz/portal/`
 
 ## Run it
 
@@ -34,6 +36,8 @@ clean-agro/
 ├─ index.html                 Marketing page (markup only)
 ├─ portal/
 │  └─ index.html              Portal page shell
+├─ public/
+│  └─ CNAME                   Custom domain, copied into the build
 ├─ src/
 │  ├─ site/
 │  │  ├─ site.css             Marketing styles (design tokens in :root)

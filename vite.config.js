@@ -3,11 +3,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // One Vite project, two pages: the marketing site at / and the farmer
-// portal at /portal/. The site is hosted as a GitHub Pages project page
-// at https://aksharma35.github.io/clean-agro/, so production builds need
-// the /clean-agro/ base. Dev, StackBlitz, and CodeSandbox serve from /.
+// portal at /portal/. The site is served from the root of the custom
+// domain (cleanagro.xyz, via public/CNAME plus the domain configured in
+// the repo's Pages settings), so the default '/' base is correct in dev,
+// StackBlitz/CodeSandbox, and production alike.
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/clean-agro/' : '/',
+  base: '/',
   plugins: [react()],
   build: {
     rollupOptions: {
