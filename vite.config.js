@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react';
 // domain (cleanagro.xyz, via public/CNAME plus the domain configured in
 // the repo's Pages settings), so the default '/' base is correct in dev,
 // StackBlitz/CodeSandbox, and production alike.
-export default defineConfig(({ command }) => ({
+export default defineConfig(() => ({
   base: '/',
   plugins: [react()],
   build: {

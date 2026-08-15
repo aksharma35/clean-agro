@@ -49,25 +49,25 @@ clean-agro/
 │     ├─ api/auth.js          Mock sign-in API (900ms delay, resolves or rejects)
 │     ├─ components/
 │     │  ├─ Shell.jsx         Brand nav and footer
-│     │  ├─ LoginForm.jsx     ← not built yet
+│     │  ├─ LoginForm.jsx     Email/password sign-in with validation
 │     │  └─ SoilDashboard.jsx Post-login soil readings
 │     └─ test/
 │        ├─ setup.js          jest-dom matchers, cleanup between tests
-│        └─ smoke.test.jsx    Proves the harness is green
+│        ├─ smoke.test.jsx    Proves the harness is green
+│        └─ login-form.test.jsx  One block per SCRUM-2 acceptance criterion
 ├─ vite.config.js             Two-page build + Vitest config
 └─ eslint.config.js           ESLint flat config (+ Prettier via .prettierrc.json)
 ```
 
-`LoginForm.jsx` is a placeholder. It renders a "not built yet" card and is the
-one piece of this codebase that has not been written. Its contract with the rest
-of the app is a single prop:
+`LoginForm.jsx` takes a single prop:
 
 ```js
 onSignedIn(farmer)   // call with the object resolved by signIn()
 ```
 
-Everything else about it — markup, fields, validation rules, error copy, submit
-behaviour — comes from the ticket that specifies it.
+It validates email and password before calling `signIn()`, reports field
+problems inline and service errors in a banner above the form, and disables the
+submit button while a request is in flight.
 
 ## Deployment
 
