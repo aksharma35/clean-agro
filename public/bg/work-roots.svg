@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="workBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ede6d2"/>
+      <stop offset="100%" stop-color="#e0d5c0"/>
+    </linearGradient>
+    <linearGradient id="soilBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4230"/>
+      <stop offset="100%" stop-color="#3e2f23"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="800" fill="url(#workBg)"/>
+  <rect x="0" y="460" width="1400" height="340" fill="url(#soilBand)" opacity="0.9"/>
+  <path d="M0 460 Q 350 440 700 460 T 1400 460 L1400 490 Q 1050 470 700 490 T 0 490 Z" fill="#3e2f23" opacity="0.5"/>
+
+  <g stroke="#c8d8c6" stroke-width="1" fill="none" opacity="0.35">
+    <path d="M160 460 C 155 540, 175 560, 150 620 M160 460 C 165 520, 145 550, 165 600 M160 460 C 158 500, 180 530, 158 580"/>
+    <path d="M400 460 C 395 540, 415 560, 390 630 M400 460 C 405 520, 385 555, 405 610 M400 460 C 398 500, 420 535, 398 590"/>
+    <path d="M700 460 C 695 550, 715 570, 690 640 M700 460 C 705 530, 685 560, 705 615 M700 460 C 698 505, 720 540, 698 595"/>
+    <path d="M1000 460 C 995 540, 1015 560, 990 625 M1000 460 C 1005 520, 985 555, 1005 610 M1000 460 C 998 500, 1020 535, 998 590"/>
+    <path d="M1240 460 C 1235 545, 1255 565, 1230 630 M1240 460 C 1245 525, 1225 555, 1245 615 M1240 460 C 1238 505, 1260 540, 1238 595"/>
+  </g>
+
+  <g fill="#458653">
+    <path d="M155 460 L150 300 L160 460 Z"/>
+    <path d="M395 460 L390 280 L400 460 Z"/>
+    <path d="M695 460 L690 310 L700 460 Z"/>
+    <path d="M995 460 L990 290 L1000 460 Z"/>
+    <path d="M1235 460 L1230 305 L1240 460 Z"/>
+  </g>
+  <g fill="#245234" opacity="0.9">
+    <ellipse cx="145" cy="330" rx="18" ry="9" transform="rotate(-25 145 330)"/>
+    <ellipse cx="165" cy="320" rx="18" ry="9" transform="rotate(20 165 320)"/>
+    <ellipse cx="385" cy="310" rx="20" ry="10" transform="rotate(-22 385 310)"/>
+    <ellipse cx="405" cy="300" rx="20" ry="10" transform="rotate(24 405 300)"/>
+    <ellipse cx="685" cy="340" rx="20" ry="10" transform="rotate(-20 685 340)"/>
+    <ellipse cx="705" cy="330" rx="20" ry="10" transform="rotate(22 705 330)"/>
+    <ellipse cx="985" cy="320" rx="18" ry="9" transform="rotate(-24 985 320)"/>
+    <ellipse cx="1005" cy="310" rx="18" ry="9" transform="rotate(20 1005 310)"/>
+    <ellipse cx="1225" cy="335" rx="18" ry="9" transform="rotate(-22 1225 335)"/>
+  </g>
+</svg>

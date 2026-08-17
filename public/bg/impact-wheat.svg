@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="impactBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3a2a"/>
+      <stop offset="55%" stop-color="#26523a"/>
+      <stop offset="100%" stop-color="#14301d"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="82%" cy="18%" r="30%">
+      <stop offset="0%" stop-color="#e0af3c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e0af3c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#impactBg)"/>
+  <rect width="1400" height="900" fill="url(#moon)"/>
+  <circle cx="1150" cy="170" r="55" fill="#f6e6b8" opacity="0.3"/>
+
+  <path d="M0 640 L1400 640 L1400 900 L0 900 Z" fill="#14301d" opacity="0.6"/>
+
+  <g stroke="#e0af3c" stroke-width="2" opacity="0.5" fill="none">
+    <path d="M120 640 L118 460 M128 640 L126 470 M136 640 L134 455"/>
+    <path d="M280 640 L278 440 M288 640 L286 455 M296 640 L294 435"/>
+    <path d="M440 640 L438 470 M448 640 L446 450 M456 640 L454 465"/>
+    <path d="M600 640 L598 445 M608 640 L606 460 M616 640 L614 440"/>
+    <path d="M760 640 L758 465 M768 640 L766 445 M776 640 L774 460"/>
+    <path d="M920 640 L918 440 M928 640 L926 455 M936 640 L934 435"/>
+    <path d="M1080 640 L1078 470 M1088 640 L1086 450 M1096 640 L1094 465"/>
+    <path d="M1240 640 L1238 445 M1248 640 L1246 460 M1256 640 L1254 440"/>
+  </g>
+
+  <g fill="#e0af3c" opacity="0.55">
+    <ellipse cx="128" cy="450" rx="6" ry="14"/>
+    <ellipse cx="288" cy="430" rx="6" ry="14"/>
+    <ellipse cx="448" cy="440" rx="6" ry="14"/>
+    <ellipse cx="608" cy="435" rx="6" ry="14"/>
+    <ellipse cx="768" cy="440" rx="6" ry="14"/>
+    <ellipse cx="928" cy="430" rx="6" ry="14"/>
+    <ellipse cx="1088" cy="440" rx="6" ry="14"/>
+    <ellipse cx="1248" cy="435" rx="6" ry="14"/>
+  </g>
+</svg>

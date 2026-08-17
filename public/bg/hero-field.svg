@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a6b4a"/>
+      <stop offset="45%" stop-color="#4d7f57"/>
+      <stop offset="100%" stop-color="#1f4028"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b5a3a"/>
+      <stop offset="100%" stop-color="#1a3a26"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#204a2e"/>
+      <stop offset="100%" stop-color="#14301d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="22%" r="45%">
+      <stop offset="0%" stop-color="#e0af3c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#e0af3c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#sky)"/>
+  <rect width="1400" height="900" fill="url(#glow)"/>
+  <circle cx="250" cy="200" r="70" fill="#f6e6b8" opacity="0.55"/>
+
+  <path d="M0 430 Q 350 370 700 430 T 1400 430 L1400 900 L0 900 Z" fill="url(#hill1)"/>
+  <path d="M0 500 Q 300 450 700 500 T 1400 500 L1400 900 L0 900 Z" fill="url(#hill2)"/>
+
+  <g opacity="0.9">
+    <!-- foreground crop rows, simple wheat-like blades -->
+    <g fill="#3a6b46">
+      <path d="M40 900 L45 620 L50 900 Z"/>
+      <path d="M80 900 L86 590 L92 900 Z"/>
+      <path d="M120 900 L124 640 L128 900 Z"/>
+      <path d="M160 900 L166 600 L172 900 Z"/>
+      <path d="M200 900 L204 630 L208 900 Z"/>
+      <path d="M240 900 L246 595 L252 900 Z"/>
+      <path d="M280 900 L284 645 L288 900 Z"/>
+      <path d="M320 900 L326 605 L332 900 Z"/>
+      <path d="M360 900 L364 635 L368 900 Z"/>
+      <path d="M400 900 L406 600 L412 900 Z"/>
+      <path d="M440 900 L444 640 L448 900 Z"/>
+      <path d="M480 900 L486 610 L492 900 Z"/>
+      <path d="M520 900 L524 630 L528 900 Z"/>
+      <path d="M560 900 L566 595 L572 900 Z"/>
+      <path d="M600 900 L604 645 L608 900 Z"/>
+      <path d="M640 900 L646 605 L652 900 Z"/>
+      <path d="M680 900 L684 630 L688 900 Z"/>
+      <path d="M720 900 L726 600 L732 900 Z"/>
+      <path d="M760 900 L764 640 L768 900 Z"/>
+      <path d="M800 900 L806 610 L812 900 Z"/>
+      <path d="M840 900 L844 635 L848 900 Z"/>
+      <path d="M880 900 L886 595 L892 900 Z"/>
+      <path d="M920 900 L924 645 L928 900 Z"/>
+      <path d="M960 900 L966 605 L972 900 Z"/>
+      <path d="M1000 900 L1004 630 L1008 900 Z"/>
+      <path d="M1040 900 L1046 600 L1052 900 Z"/>
+      <path d="M1080 900 L1084 640 L1088 900 Z"/>
+      <path d="M1120 900 L1126 610 L1132 900 Z"/>
+      <path d="M1160 900 L1164 635 L1168 900 Z"/>
+      <path d="M1200 900 L1206 595 L1212 900 Z"/>
+      <path d="M1240 900 L1244 645 L1248 900 Z"/>
+      <path d="M1280 900 L1286 605 L1292 900 Z"/>
+      <path d="M1320 900 L1324 630 L1328 900 Z"/>
+      <path d="M1360 900 L1366 600 L1372 900 Z"/>
+    </g>
+  </g>
+</svg>
