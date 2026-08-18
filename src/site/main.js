@@ -1,3 +1,9 @@
+// Crops strip nav
+const cropsTrack=document.getElementById('cropsTrack');
+const cropStep=220;
+document.getElementById('cropPrev')?.addEventListener('click',()=>cropsTrack.scrollBy({left:-cropStep,behavior:'smooth'}));
+document.getElementById('cropNext')?.addEventListener('click',()=>cropsTrack.scrollBy({left:cropStep,behavior:'smooth'}));
+
 // Mobile nav
 const toggle=document.getElementById('navToggle');
 const links=document.getElementById('navLinks');
