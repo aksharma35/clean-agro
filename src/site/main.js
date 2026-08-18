@@ -28,6 +28,46 @@ const io=new IntersectionObserver(entries=>{
 },{threshold:.15});
 document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 
+// Story section parallax
+const storySection=document.getElementById('story');
+if(storySection&&!prefersReduced){
+  const layers=[...storySection.querySelectorAll('[data-speed]')];
+  const soilLayer=storySection.querySelector('[data-reveal]');
+  let ticking=false;
+
+  function updateParallax(){
+    ticking=false;
+    const rect=storySection.getBoundingClientRect();
+    const vh=window.innerHeight;
+    const total=rect.height+vh;
+    const progress=Math.min(1,Math.max(0,(vh-rect.top)/total));
+    const centered=(progress-0.5)*2;
+    layers.forEach(layer=>{
+      const speed=parseFloat(layer.dataset.speed);
+      layer.style.transform=`translate3d(0, ${centered*speed*70}px, 0)`;
+    });
+    if(soilLayer){
+      const reveal=Math.min(1,Math.max(0,(progress-0.5)/0.5));
+      soilLayer.style.opacity=String(0.3+reveal*0.7);
+      soilLayer.style.transform=`translate3d(0, ${(1-reveal)*36}px, 0)`;
+    }
+  }
+  function onScroll(){
+    if(!ticking){ticking=true;requestAnimationFrame(updateParallax);}
+  }
+  const storyIO=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        window.addEventListener('scroll',onScroll,{passive:true});
+        updateParallax();
+      }else{
+        window.removeEventListener('scroll',onScroll);
+      }
+    });
+  },{threshold:0});
+  storyIO.observe(storySection);
+}
+
 // Stat counters
 function runCounters(scope){
   scope.querySelectorAll('.stat-num').forEach(el=>{

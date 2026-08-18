@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 550" preserveAspectRatio="none">
+<path fill="#9AAF84" d="M0 310Q220 220 430 310T850 300T1240 280T1600 310V550H0z"/>
+<path fill="#7F9A6C" d="M0 370Q260 280 520 370T980 350T1400 330T1600 360V550H0z"/>
+<path fill="#668654" d="M0 430Q260 340 520 430T1000 420T1400 400T1600 430V550H0z"/>
+<path fill="none" stroke="#B6C99C" stroke-width="10" opacity=".55" d="M80 500Q400 370 760 500M760 500Q1100 350 1510 480"/>
+</svg>
