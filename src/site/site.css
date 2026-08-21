@@ -37,6 +37,8 @@ section{padding:96px 0}
 .nav-links a:hover{opacity:1;color:var(--field)}
 .nav-cta{background:var(--ink);color:var(--paper)!important;padding:10px 18px;border-radius:999px;opacity:1!important}
 .nav-cta:hover{background:var(--field)}
+.nav-ask{border:1.5px solid var(--field);color:var(--field)!important;padding:8.5px 18px;border-radius:999px;opacity:1!important;transition:background .15s ease,color .15s ease}
+.nav-ask:hover{background:var(--field);color:var(--paper)!important}
 .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-family:var(--mono);font-size:12px;cursor:pointer;color:var(--ink)}
 
 /* ---------- Hero: the seed packet ---------- */
